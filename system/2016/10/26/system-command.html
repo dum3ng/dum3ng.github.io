@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>system command usage misc</title>
+  <meta name="description" content="udp data">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://keepon.today/system/2016/10/26/system-command.html">
+  <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
+</head>
+
+
+  <body>
+    <div class='container'>
+    <!-- <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">keep on today</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/java.html">java</a>
+          
+        
+          
+          <a class="page-link" href="/javascript.html">javascript</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/nodejs.html">nodejs</a>
+          
+        
+          
+          <a class="page-link" href="/other.html">misc</a>
+          
+        
+          
+          <a class="page-link" href="/python.html">python</a>
+          
+        
+          
+          <a class="page-link" href="/system.html">system</a>
+          
+        
+          
+          <a class="page-link" href="/web.html">web</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header> -->
+
+<header class='site-header'>
+  <div class='wrapper'>
+    <!-- hill svg -->
+    <svg id = 'hill2' width="302px" height="35px" viewBox="388 93 302 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <polygon id="Path-3" stroke="none" fill="#8E8989" fill-rule="evenodd" transform="translate(538.530335, 110.031792) scale(-1, 1) translate(-538.530335, -110.031792) " points="388 124.877426 419.785053 100.776913 432.607283 123.579808 451.49093 104.093538 455.071477 112.565447 469.639993 93 476.743904 100.403023 487.907821 95.8767541 489.526545 103.812021 502.709469 101.643458 516.604983 111.263429 582.5196 103.948381 612.008528 111.720895 633.760132 105.483529 651.095434 112.525858 667.12872 106.754755 689.06067 127.063583"></polygon>
+    </svg>
+    <svg id='hill1' width="262px" height="88px" viewBox="0 0 262 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+        <desc>Created with Sketch.</desc>
+        <defs>
+            <polygon id="path-1" points="0.668341473 72.0471982 79.1622034 30.6128154 97.3291054 61.1745826 121.017811 0.751700095 161.413728 44.9386438 189.227105 21.9255664 196.66319 41.2143455 202.743847 30.2708306 207.777697 45.8102881 215.34724 15.8949556 261.882201 84.2126833 0.43479085 87.8285474"></polygon>
+        </defs>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Path-2" stroke="none" fill="#541E01" fill-rule="evenodd" xlink:href="#path-1"></use>
+    </svg>
+
+    <a class="site-title" href="/">keep on today</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </nav>
+  </div>
+
+  <div class='trigger'>
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=About/> -->
+        
+        <a class="page-link   " href="/about/">About</a>
+        
+      </span>
+      
+      
+    
+      
+    
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=java/> -->
+        
+        <a class="page-link   " href="/java.html">java</a>
+        
+      </span>
+      
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=javascript/> -->
+        
+        <a class="page-link   " href="/javascript.html">javascript</a>
+        
+      </span>
+      
+      
+    
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=nodejs/> -->
+        
+        <a class="page-link   " href="/nodejs.html">nodejs</a>
+        
+      </span>
+      
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=misc/> -->
+        
+        <a class="page-link   " href="/other.html">misc</a>
+        
+      </span>
+      
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=python/> -->
+        
+        <a class="page-link   " href="/python.html">python</a>
+        
+      </span>
+      
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=system/> -->
+        
+        <a class="page-link  active " href="/system.html">system</a>
+        
+      </span>
+      
+      
+    
+      
+      <span>
+        <!-- <input class='cat' type = 'radio' name='cat' id=web/> -->
+        
+        <a class="page-link   " href="/web.html">web</a>
+        
+      </span>
+      
+      
+    
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">system command usage misc</h1>
+    <p class="post-meta"><time datetime="2016-10-26T00:00:00+08:00" itemprop="datePublished">Oct 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
+
+    
+    <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
+<g style="fill: rgb(0, 0, 0);">
+  <g style="fill: rgb(0, 0, 0);">
+    <path d="M607.416,67.76c-3.223-3.223-7.688-4.881-12.231-4.536l-24.713,1.863l-12.533,166.342    c-0.847,11.196-5.681,21.729-13.609,29.655L239.047,566.365c-1.527,1.527-3.145,2.926-4.835,4.212l30.303,30.303    c6.107,6.109,16.016,6.112,22.121,0l305.282-305.279c2.645-2.646,4.256-6.151,4.538-9.885l15.5-205.721    C612.295,75.452,610.641,70.983,607.416,67.76z" style="fill: rgb(0, 0, 0);"></path>
+    <path d="M526.741,229.076l15.5-205.72c0.343-4.543-1.313-9.013-4.54-12.235c-2.942-2.945-6.928-4.584-11.056-4.584    c-0.39,0-0.784,0.015-1.176,0.044L319.749,22.084c-3.732,0.282-7.24,1.888-9.887,4.536L4.58,331.901    c-6.107,6.109-6.107,16.016,0,22.123l190.223,190.221c3.055,3.054,7.057,4.58,11.061,4.58c4.002,0,8.007-1.527,11.061-4.58    l305.282-305.282C524.853,236.316,526.46,232.81,526.741,229.076z M447.987,160.164c-16.382,16.382-42.945,16.382-59.331,0    c-16.377-16.382-16.377-42.943,0.003-59.325c16.381-16.382,42.943-16.382,59.327,0    C464.364,117.221,464.364,143.783,447.987,160.164z" style="fill: rgb(0, 0, 0);"></path>
+  </g>
+</g>
+
+</svg></span>
+  <span class='tag-post'>terminal</span></span>
+    
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="udp-data">udp data</h3>
+
+<p>If you are using bash, you might as well write</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">echo</span> -n <span class="s2">"hello"</span> &gt;/dev/udp/localhost/8000</code></pre></figure>
+
+<p>and avoid all the idiosyncrasies and incompatibilities of netcat.</p>
+
+<p>This also works sending to other hosts, ex:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">echo</span> -n <span class="s2">"hello"</span> &gt;/dev/udp/remotehost/8000</code></pre></figure>
+
+<p>These are not “real” devices on the file system, but bash “special” aliases.</p>
+
+  </div>
+
+                                
+</article>
+<div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  var date = "2016-10-26";
+  date = date.replace(/-/g,'/')
+  var url = 'jekyll/update/'+date+"system command usage misc"
+this.page.url = "http://keepon.today"+"/system/2016/10/26/system-command.html"//"/system/2016/10/26/system-command.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/system/2016/10/26/system-command.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//keepon-today.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//keepon-today.disqus.com/count.js" async></script>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">keep on today</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>keep on today</li>
+          <li><a href="mailto:mindnova@126.com">mindnova@126.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/mindnova"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">mindnova</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Cogito, ergo sum.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+    </div>
+  </body>
+
+</html>

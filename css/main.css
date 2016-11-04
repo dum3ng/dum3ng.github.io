@@ -713,6 +713,7 @@ ul.category-post-list {
         display: block;
         height: 56px; } }
     .container .trigger .shadow {
+      pointer-events: none;
       position: absolute;
       width: 100%;
       height: 100%;

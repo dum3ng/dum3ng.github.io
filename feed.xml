@@ -6,9 +6,103 @@
 </description>
     <link>http://keepon.today/</link>
     <atom:link href="http://keepon.today/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2016 14:34:20 +0800</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2016 14:34:20 +0800</lastBuildDate>
+    <pubDate>Sat, 05 Nov 2016 16:16:38 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Nov 2016 16:16:38 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>install nginx and php in osx</title>
+        <description>&lt;h2 id=&quot;install-nginx&quot;&gt;install nginx&lt;/h2&gt;
+&lt;p&gt;Use homebrew:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  brew install nginx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;configure-nginx&quot;&gt;configure nginx&lt;/h3&gt;
+&lt;p&gt;Run command &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt; to start nginx service.
+Edit the configuration file, generally the file is &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/etc/nginx/nginx.conf&lt;/code&gt;.
+The default configuration send content in a &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; folder, which you can find it in &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/Cellar/nginx/${version_number}/&lt;/code&gt;.
+The simplist configuration would be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;  &lt;span class=&quot;k&quot;&gt;worker_processes&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;events&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;worker_connections&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mime.types&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;default_type&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;application/octet-stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;sendfile&lt;/span&gt;        &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;log_format&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_user&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$time_local&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;
+                       &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$status&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$body_bytes_sent&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http_referer&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;
+                       &lt;span class=&quot;s&quot;&gt;&#39;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http_user_agent&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;access_log&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;logs/access&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.log&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;index&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;index.html&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.htm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;/site/php/data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+              
+      &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;localhost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+          &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/images&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Yet you can ignore the log, but it would be very useful if something went wrong.
+The log file can be found at &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/var/log/nginx/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Run command &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx -s reload&lt;/code&gt; to reload the configuration file to see the result.
+&lt;strong&gt;Note&lt;/strong&gt;: If something works not as expected, you may need restart the nginx service. Just run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  nginx -s stop
+  nginx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;install-php&quot;&gt;install php&lt;/h2&gt;
+&lt;p&gt;Follow the instruction at &lt;a href=&quot;https://github.com/Homebrew/homebrew-php&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After installed successfully, start the cgi service:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;nx&quot;&gt;php&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cgi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;connect-nginx-with-php-cgi&quot;&gt;connect nginx with php cgi&lt;/h2&gt;
+&lt;p&gt;Re-edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx.conf&lt;/code&gt; file, add a location block:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;    &lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;\.php$&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;kn&quot;&gt;fastcgi_pass&lt;/span&gt;   &lt;span class=&quot;nf&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;kn&quot;&gt;fastcgi_index&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;index.php&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;kn&quot;&gt;fastcgi_param&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;SCRIPT_FILENAME&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;scripts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fastcgi_script_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;kn&quot;&gt;include&lt;/span&gt;        &lt;span class=&quot;s&quot;&gt;fastcgi_params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The tidy before the location means this is a regular expression match. For detail, you can see a article by &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms&quot;&gt;digital ocean&lt;/a&gt;
+&lt;strong&gt;Note&lt;/strong&gt;: Take a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;fastcgi_param&lt;/code&gt; option, make sure it is in your own path. The full file struct now will be like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;php&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;
+                &lt;span class=&quot;sr&quot;&gt;/image&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;s
+&lt;/span&gt;                &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;done&quot;&gt;Done!&lt;/h2&gt;
+&lt;p&gt;Now write a simple php file in the scripts folder, open &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost/my.php&lt;/code&gt; in your browser and see the result.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 05 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://keepon.today/misc/2016/11/05/install-nginx-and-php-in-osx.html</link>
+        <guid isPermaLink="true">http://keepon.today/misc/2016/11/05/install-nginx-and-php-in-osx.html</guid>
+        
+        <category>nginx</category>
+        
+        <category>php</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
     
       <item>
         <title>session and cookie in express</title>
@@ -577,23 +671,6 @@ Every method must contains &lt;code class=&quot;highlighter-rouge&quot;&gt;self&
         <category>doc</category>
         
         <category>readline</category>
-        
-        
-        <category>nodejs</category>
-        
-      </item>
-    
-      <item>
-        <title>nodejs: fs module</title>
-        <description>&lt;p&gt;Since file operations are usually time-consuming, it will block the process if you do that synchronously. The file operation and method name in nodejs are default asynchronous, and the synchronous method are generously add a postfix &lt;code class=&quot;highlighter-rouge&quot;&gt;Sync &lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://keepon.today/nodejs/2016/10/26/nodejs-file-system-module.html</link>
-        <guid isPermaLink="true">http://keepon.today/nodejs/2016/10/26/nodejs-file-system-module.html</guid>
-        
-        <category>doc</category>
-        
-        <category>fs</category>
         
         
         <category>nodejs</category>

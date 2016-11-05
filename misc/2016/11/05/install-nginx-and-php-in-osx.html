@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>system</title>
-  <meta name="description" content="Cogito, ergo sum.
-">
+  <title>install nginx and php in osx</title>
+  <meta name="description" content="install nginxUse homebrew:">
     <link  rel="shortcut icon"  href= '/favicon.png'>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://keepon.today/system.html">
+  <link rel="canonical" href="http://keepon.today/misc/2016/11/05/install-nginx-and-php-in-osx.html">
   <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
 </head>
 
@@ -167,7 +166,7 @@
       <span>
         <!-- <input class='cat' type = 'radio' name='cat' id=misc/> -->
         
-        <a class="page-link   " href="/other.html">misc</a>
+        <a class="page-link  active " href="/other.html">misc</a>
         
       </span>
       
@@ -187,7 +186,7 @@
       <span>
         <!-- <input class='cat' type = 'radio' name='cat' id=system/> -->
         
-        <a class="page-link  active " href="/system.html">system</a>
+        <a class="page-link   " href="/system.html">system</a>
         
       </span>
       
@@ -209,72 +208,14 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">system</h1>
-  </header>
-  <!--  -->
-  <ul class='category-post-list'> 
-  
+    <h1 class="post-title" itemprop="name headline">install nginx and php in osx</h1>
+    <p class="post-meta"><time datetime="2016-11-05T00:00:00+08:00" itemprop="datePublished">Nov 5, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
+
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-        
-          
-        
-      
-        
-          
-          <li class='category-post-list-item'>
-            <div class='post-calendar'>
-              <span class='icon-clendar'><svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="52px" height="64px" viewBox="0 0 52 64" enable-background="new 0 0 52 64" xml:space="preserve">
-<path fill="#908C7C" d="M50.876,28.246H1.945V42.08v14.541v3.156c0,0.966,0.783,1.749,1.749,1.749h45.391
-  c0.966,0,1.791-0.783,1.791-1.749v-3.156l0,0L50.876,28.246L50.876,28.246z"/>
-<path fill="#A4402F" d="M50.876,28.246V8.745c0-1.694-1.373-3.067-3.066-3.067H5.011c-1.693,0-3.066,1.373-3.066,3.067v19.501
-  H50.876L50.876,28.246z"/>
-<rect x="1.945" y="27.079" fill="#B7B5AA" width="48.933" height="2.197"/>
-<path fill="#E7E1CE" d="M49.81,27.137H0.878v13.834v14.541v3.156c0,0.966,0.783,1.749,1.749,1.749h45.391
-  c0.966,0,1.791-0.783,1.791-1.749v-3.156l0,0L49.81,27.137L49.81,27.137z"/>
-<path fill="#CD4E38" d="M49.81,27.137V7.636c0-1.694-1.373-3.067-3.067-3.067H3.944c-1.693,0-3.066,1.373-3.066,3.067v19.501H49.81z
-  "/>
-<circle fill="#803326" cx="9.199" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M9.199,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.486-1.086,1.086-1.086l0,0
-  c0.601,0,1.086,0.486,1.086,1.086v6.501C10.285,9.363,9.799,9.849,9.199,9.849L9.199,9.849z"/>
-<circle fill="#803326" cx="19.964" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M19.963,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C21.048,9.363,20.562,9.849,19.963,9.849L19.963,9.849z"/>
-<circle fill="#803326" cx="30.725" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M30.725,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C31.811,9.363,31.326,9.849,30.725,9.849L30.725,9.849z"/>
-<circle fill="#803326" cx="41.487" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M41.489,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C42.575,9.363,42.088,9.849,41.489,9.849L41.489,9.849z"/>
-<rect x="0.878" y="27.079" fill="#F6F0DB" width="48.933" height="2.197"/>
-</svg></span>
-              <span class='month'>Oct</span>
-              <span class='day'>26</span>
-            </div>
-            <div class='detail'>
-              <div class='title'>
-                <div class='space'></div>
-                <a href='/system/2016/10/26/system-command.html'>system command usage misc</a>
-                <div class='space'></div>
-              </div>
-              <div class='meta'>
-                <!--tags-->
-                 
-                   <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
+    <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
 <g style="fill: rgb(0, 0, 0);">
   <g style="fill: rgb(0, 0, 0);">
     <path d="M607.416,67.76c-3.223-3.223-7.688-4.881-12.231-4.536l-24.713,1.863l-12.533,166.342    c-0.847,11.196-5.681,21.729-13.609,29.655L239.047,566.365c-1.527,1.527-3.145,2.926-4.835,4.212l30.303,30.303    c6.107,6.109,16.016,6.112,22.121,0l305.282-305.279c2.645-2.646,4.256-6.151,4.538-9.885l15.5-205.721    C612.295,75.452,610.641,70.983,607.416,67.76z" style="fill: rgb(0, 0, 0);"></path>
@@ -283,72 +224,119 @@
 </g>
 
 </svg></span>
-  <span class='tag-post'>terminal</span></span>
-                 
-              </div>
-            </div>
-          </li>
-          
-        
-          
-          <li class='category-post-list-item'>
-            <div class='post-calendar'>
-              <span class='icon-clendar'><svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="52px" height="64px" viewBox="0 0 52 64" enable-background="new 0 0 52 64" xml:space="preserve">
-<path fill="#908C7C" d="M50.876,28.246H1.945V42.08v14.541v3.156c0,0.966,0.783,1.749,1.749,1.749h45.391
-  c0.966,0,1.791-0.783,1.791-1.749v-3.156l0,0L50.876,28.246L50.876,28.246z"/>
-<path fill="#A4402F" d="M50.876,28.246V8.745c0-1.694-1.373-3.067-3.066-3.067H5.011c-1.693,0-3.066,1.373-3.066,3.067v19.501
-  H50.876L50.876,28.246z"/>
-<rect x="1.945" y="27.079" fill="#B7B5AA" width="48.933" height="2.197"/>
-<path fill="#E7E1CE" d="M49.81,27.137H0.878v13.834v14.541v3.156c0,0.966,0.783,1.749,1.749,1.749h45.391
-  c0.966,0,1.791-0.783,1.791-1.749v-3.156l0,0L49.81,27.137L49.81,27.137z"/>
-<path fill="#CD4E38" d="M49.81,27.137V7.636c0-1.694-1.373-3.067-3.067-3.067H3.944c-1.693,0-3.066,1.373-3.066,3.067v19.501H49.81z
-  "/>
-<circle fill="#803326" cx="9.199" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M9.199,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.486-1.086,1.086-1.086l0,0
-  c0.601,0,1.086,0.486,1.086,1.086v6.501C10.285,9.363,9.799,9.849,9.199,9.849L9.199,9.849z"/>
-<circle fill="#803326" cx="19.964" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M19.963,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C21.048,9.363,20.562,9.849,19.963,9.849L19.963,9.849z"/>
-<circle fill="#803326" cx="30.725" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M30.725,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C31.811,9.363,31.326,9.849,30.725,9.849L30.725,9.849z"/>
-<circle fill="#803326" cx="41.487" cy="8.628" r="2.264"/>
-<path fill="#2C2A25" d="M41.489,9.849c-0.6,0-1.086-0.486-1.086-1.086V2.262c0-0.6,0.487-1.086,1.086-1.086l0,0
-  c0.6,0,1.086,0.486,1.086,1.086v6.501C42.575,9.363,42.088,9.849,41.489,9.849L41.489,9.849z"/>
-<rect x="0.878" y="27.079" fill="#F6F0DB" width="48.933" height="2.197"/>
-</svg></span>
-              <span class='month'>Oct</span>
-              <span class='day'>24</span>
-            </div>
-            <div class='detail'>
-              <div class='title'>
-                <div class='space'></div>
-                <a href='/system/2016/10/24/change-hostname-in-terminal.html'>change hostname in terminal</a>
-                <div class='space'></div>
-              </div>
-              <div class='meta'>
-                <!--tags-->
-                 
-              </div>
-            </div>
-          </li>
-          
-        
-      
-      
-  
+  <span class='tag-post'>nginx</span> <span class='tag-post'>php</span></span>
     
-  
-    
-  
-    
-  
-    
-  
-  </ul>
+    </p>
+  </header>
 
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="install-nginx">install nginx</h2>
+<p>Use homebrew:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  brew install nginx</code></pre></figure>
+
+<h3 id="configure-nginx">configure nginx</h3>
+<p>Run command <code class="highlighter-rouge">nginx</code> to start nginx service.
+Edit the configuration file, generally the file is <code class="highlighter-rouge">/usr/local/etc/nginx/nginx.conf</code>.
+The default configuration send content in a <code class="highlighter-rouge">html</code> folder, which you can find it in <code class="highlighter-rouge">/usr/local/Cellar/nginx/${version_number}/</code>.
+The simplist configuration would be:</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx">  <span class="k">worker_processes</span>  <span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">events</span> <span class="p">{</span>
+      <span class="kn">worker_connections</span>  <span class="mi">1024</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">http</span> <span class="p">{</span>
+      <span class="kn">include</span> <span class="s">mime.types</span><span class="p">;</span>
+      <span class="kn">default_type</span>  <span class="nc">application/octet-stream</span><span class="p">;</span>
+      <span class="kn">sendfile</span>        <span class="no">on</span><span class="p">;</span>
+      <span class="kn">log_format</span>  <span class="s">main</span>  <span class="s">'</span><span class="nv">$remote_addr</span> <span class="s">-</span> <span class="nv">$remote_user</span> <span class="s">[</span><span class="nv">$time_local</span><span class="s">]</span> <span class="s">"</span><span class="nv">$request</span><span class="s">"</span> <span class="s">'</span>
+                       <span class="s">'</span><span class="nv">$status</span> <span class="nv">$body_bytes_sent</span> <span class="s">"</span><span class="nv">$http_referer</span><span class="s">"</span> <span class="s">'</span>
+                       <span class="s">'"</span><span class="nv">$http_user_agent</span><span class="s">"</span> <span class="s">"</span><span class="nv">$http_x_forwarded_for</span><span class="s">"'</span><span class="p">;</span>
+      <span class="kn">access_log</span>  <span class="nc">logs/access</span><span class="s">.log</span>  <span class="s">main</span><span class="p">;</span>
+      <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+      <span class="kn">root</span>    <span class="n">/site/php/data</span><span class="p">;</span>
+              
+      <span class="kn">server</span> <span class="p">{</span>
+          <span class="kn">listen</span> <span class="mi">8080</span><span class="p">;</span>
+          <span class="kn">server_name</span> <span class="s">localhost</span><span class="p">;</span>
+
+          <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+             
+          <span class="p">}</span>
+          <span class="kn">location</span> <span class="n">/images</span> <span class="p">{</span>
+            <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="p">;</span>
+          <span class="p">}</span>
+
+      <span class="p">}</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>Yet you can ignore the log, but it would be very useful if something went wrong.
+The log file can be found at <code class="highlighter-rouge">/usr/local/var/log/nginx/</code>.</p>
+
+<p>Run command <code class="highlighter-rouge">nginx -s reload</code> to reload the configuration file to see the result.
+<strong>Note</strong>: If something works not as expected, you may need restart the nginx service. Just run:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  nginx -s stop
+  nginx</code></pre></figure>
+
+<h2 id="install-php">install php</h2>
+<p>Follow the instruction at <a href="https://github.com/Homebrew/homebrew-php">github</a>.</p>
+
+<p>After installed successfully, start the cgi service:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">php</span><span class="o">-</span><span class="nx">cgi</span> <span class="o">-</span><span class="nx">b</span> <span class="mi">9000</span></code></pre></figure>
+
+<h2 id="connect-nginx-with-php-cgi">connect nginx with php cgi</h2>
+<p>Re-edit the <code class="highlighter-rouge">nginx.conf</code> file, add a location block:</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx">    <span class="k">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+       <span class="kn">fastcgi_pass</span>   <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">9000</span><span class="p">;</span>
+       <span class="kn">fastcgi_index</span>  <span class="s">index.php</span><span class="p">;</span>
+       <span class="kn">fastcgi_param</span>  <span class="s">SCRIPT_FILENAME</span>  <span class="s">scripts</span><span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+       <span class="kn">include</span>        <span class="s">fastcgi_params</span><span class="p">;</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>The tidy before the location means this is a regular expression match. For detail, you can see a article by <a href="https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms">digital ocean</a>
+<strong>Note</strong>: Take a look at the <code class="highlighter-rouge">fastcgi_param</code> option, make sure it is in your own path. The full file struct now will be like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="o">/</span><span class="nx">site</span><span class="o">/</span><span class="nx">php</span><span class="o">/</span><span class="nx">data</span>
+                <span class="sr">/image</span><span class="err">s
+</span>                <span class="o">/</span><span class="nx">scripts</span></code></pre></figure>
+
+<h2 id="done">Done!</h2>
+<p>Now write a simple php file in the scripts folder, open <code class="highlighter-rouge">localhost/my.php</code> in your browser and see the result.</p>
+
+
+  </div>
+
+                                
 </article>
+<div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  var date = "2016-11-05";
+  date = date.replace(/-/g,'/')
+  var url = 'jekyll/update/'+date+"install nginx and php in osx"
+this.page.url = "http://keepon.today"+"/misc/2016/11/05/install-nginx-and-php-in-osx.html"//"/misc/2016/11/05/install-nginx-and-php-in-osx.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/misc/2016/11/05/install-nginx-and-php-in-osx.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//keepon-today.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//keepon-today.disqus.com/count.js" async></script>
 
       </div>
     </div>

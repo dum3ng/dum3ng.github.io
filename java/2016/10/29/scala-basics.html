@@ -230,19 +230,19 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="section">0</h2>
+    <h3 id="section">0</h3>
 <p>Every expression has a value.
 Every value is a object.
 Primitive values will do <code class="highlighter-rouge">boxing</code> and <code class="highlighter-rouge">unboxing</code> when used as class just like java.</p>
 
-<h2 id="statement">statement</h2>
+<h3 id="statement">statement</h3>
 
-<h2 id="types">types</h2>
+<h3 id="types">types</h3>
 <p>Scala has a powerful type system to make generic programming easy.</p>
 
-<h3 id="type-variable">type variable</h3>
+<h4 id="type-variable">type variable</h4>
 
-<h3 id="upper-bound-and-lower-bound-type">upper-bound and lower-bound type</h3>
+<h4 id="upper-bound-and-lower-bound-type">upper-bound and lower-bound type</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">class</span> <span class="nc">A</span><span class="o">(</span><span class="n">a</span> <span class="k">&gt;:</span> <span class="n">U</span><span class="o">){</span>  <span class="c1">// a has a type which is parent of U
 </span>
@@ -254,9 +254,9 @@ Primitive values will do <code class="highlighter-rouge">boxing</code> and <code
 
 <p>And they also can be used in functions.</p>
 
-<h2 id="function">function</h2>
+<h3 id="function">function</h3>
 
-<h3 id="normal">normal</h3>
+<h4 id="normal">normal</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">def</span> <span class="n">func</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">T</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span><span class="kt">U</span><span class="o">)</span><span class="k">:</span><span class="kt">V</span> <span class="o">=</span> <span class="o">...</span></code></pre></figure>
 
@@ -273,13 +273,13 @@ Add return type after the function declaration.</p>
   <li>expand parameter ( use <code class="highlighter-rouge">_*</code> ): func(x:T, ys:U_*)    // Use a List as parameter for <code class="highlighter-rouge">ys</code></li>
 </ul>
 
-<h3 id="partial">partial</h3>
+<h4 id="partial">partial</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">def</span> <span class="n">part</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span><span class="k">:</span><span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
   <span class="k">def</span> <span class="n">part1</span> <span class="k">=</span> <span class="n">part</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="k">_:</span><span class="kt">Int</span><span class="o">)</span>
   <span class="k">def</span> <span class="n">part2</span> <span class="k">=</span> <span class="n">part</span><span class="o">(</span><span class="k">_:</span><span class="kt">Int</span><span class="o">,</span> <span class="k">_:</span><span class="kt">Int</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span></code></pre></figure>
 
-<h3 id="currying">currying</h3>
+<h4 id="currying">currying</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">def</span> <span class="n">curry</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">T</span><span class="o">)(</span><span class="n">y</span><span class="k">:</span><span class="kt">U</span><span class="o">)(</span><span class="n">z</span><span class="k">:</span><span class="kt">V</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span></code></pre></figure>
 
@@ -289,7 +289,7 @@ You can change a normal function to curried function by:</p>
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">val</span> <span class="n">curried</span> <span class="k">=</span> <span class="n">part</span><span class="o">.</span><span class="n">curried</span>
   <span class="o">//</span> <span class="n">curried</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">)=&gt;(</span><span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">)=&gt;(</span><span class="n">z</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span><span class="k">=&gt;</span><span class="nc">Int</span></code></pre></figure>
 
-<h3 id="anoymous-lamda-">anoymous (lamda )</h3>
+<h4 id="anoymous-lamda-">anoymous (lamda )</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">def</span> <span class="n">anoy</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">T</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span><span class="kt">U</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">...</span>
     <span class="c1">// or
@@ -297,7 +297,7 @@ You can change a normal function to curried function by:</p>
 
 <p><strong>Note</strong>: The deference between the <code class="highlighter-rouge">def</code> and <code class="highlighter-rouge">val</code> is <code class="highlighter-rouge">def</code> will not evaluate the expression at right while <code class="highlighter-rouge">val</code> does. So to avoid side effect you do not expect, use <code class="highlighter-rouge">def</code>.</p>
 
-<h3 id="parameterless">parameterless</h3>
+<h4 id="parameterless">parameterless</h4>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala">  <span class="k">def</span> <span class="n">less</span> <span class="k">=</span> <span class="o">...</span></code></pre></figure>
 
@@ -308,11 +308,11 @@ You can change a normal function to curried function by:</p>
 
 <p>The <code class="highlighter-rouge">y</code> is just like a parameterless function declared by <code class="highlighter-rouge">def</code>. Unless it is used by a right side expression and be evalued, it will stay untouched.</p>
 
-<h3 id="override">override</h3>
+<h4 id="override">override</h4>
 
-<h3 id="polymophic">polymophic</h3>
+<h4 id="polymophic">polymophic</h4>
 
-<h2 id="class">class</h2>
+<h3 id="class">class</h3>
 <p>There is no <code class="highlighter-rouge">static </code> in scala, and you can move all the static method you want to the companion object of the class.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>class SomeClass{
@@ -324,7 +324,7 @@ object SomeClass{
 </code></pre>
 </div>
 
-<h3 id="class-pattern">class pattern</h3>
+<h4 id="class-pattern">class pattern</h4>
 <h4 id="section-1">#1</h4>
 <p>override <code class="highlighter-rouge">apply</code> function.
 The apply function has special meaning in scala. The call to it will transform to call the class instance or the object itself. You can use it to represent subscript , like in swift does with <code class="highlighter-rouge">subscript</code>, but with a bracket not square bracket. 
@@ -353,7 +353,7 @@ So by override <code class="highlighter-rouge">apply</code> in an object, you ca
     <span class="k">var</span> <span class="n">b</span> <span class="k">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">(</span><span class="s">"hello"</span><span class="o">)</span>
     <span class="k">var</span> <span class="n">c</span> <span class="k">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">)</span></code></pre></figure>
 
-<h3 id="special-issues">special issues</h3>
+<h4 id="special-issues">special issues</h4>
 <ul>
   <li>a class method with one parameter can be called with dot symbol:</li>
 </ul>
@@ -370,7 +370,7 @@ So by override <code class="highlighter-rouge">apply</code> in an object, you ca
 <p>No matter how the parameter list of <code class="highlighter-rouge">this</code> method changed, it will finally fall to call the constructor <code class="highlighter-rouge">A(Int,String)</code>.
 It is like <code class="highlighter-rouge">designated initializer</code> and <code class="highlighter-rouge">convenient initializer</code> in swift. The constructor is a designated initializer, and the other this methods are all convient initializers.</p>
 
-<h2 id="object">object</h2>
+<h3 id="object">object</h3>
 <p>Scala use <code class="highlighter-rouge">object</code> to implement the singleton pattern and abilities with <code class="highlighter-rouge">static </code> keyword.</p>
 
 <p>##</p>

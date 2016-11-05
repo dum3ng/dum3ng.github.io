@@ -6,8 +6,8 @@
 </description>
     <link>http://keepon.today/</link>
     <atom:link href="http://keepon.today/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Nov 2016 16:16:38 +0800</pubDate>
-    <lastBuildDate>Sat, 05 Nov 2016 16:16:38 +0800</lastBuildDate>
+    <pubDate>Sat, 05 Nov 2016 16:49:26 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Nov 2016 16:49:26 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -250,19 +250,19 @@ If you are making a mobile app with the net communication capability, you can se
     
       <item>
         <title>scala basics</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;0&lt;/h2&gt;
+        <description>&lt;h3 id=&quot;section&quot;&gt;0&lt;/h3&gt;
 &lt;p&gt;Every expression has a value.
 Every value is a object.
 Primitive values will do &lt;code class=&quot;highlighter-rouge&quot;&gt;boxing&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;unboxing&lt;/code&gt; when used as class just like java.&lt;/p&gt;
 
-&lt;h2 id=&quot;statement&quot;&gt;statement&lt;/h2&gt;
+&lt;h3 id=&quot;statement&quot;&gt;statement&lt;/h3&gt;
 
-&lt;h2 id=&quot;types&quot;&gt;types&lt;/h2&gt;
+&lt;h3 id=&quot;types&quot;&gt;types&lt;/h3&gt;
 &lt;p&gt;Scala has a powerful type system to make generic programming easy.&lt;/p&gt;
 
-&lt;h3 id=&quot;type-variable&quot;&gt;type variable&lt;/h3&gt;
+&lt;h4 id=&quot;type-variable&quot;&gt;type variable&lt;/h4&gt;
 
-&lt;h3 id=&quot;upper-bound-and-lower-bound-type&quot;&gt;upper-bound and lower-bound type&lt;/h3&gt;
+&lt;h4 id=&quot;upper-bound-and-lower-bound-type&quot;&gt;upper-bound and lower-bound type&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// a has a type which is parent of U
 &lt;/span&gt;
@@ -274,9 +274,9 @@ Primitive values will do &lt;code class=&quot;highlighter-rouge&quot;&gt;boxing&
 
 &lt;p&gt;And they also can be used in functions.&lt;/p&gt;
 
-&lt;h2 id=&quot;function&quot;&gt;function&lt;/h2&gt;
+&lt;h3 id=&quot;function&quot;&gt;function&lt;/h3&gt;
 
-&lt;h3 id=&quot;normal&quot;&gt;normal&lt;/h3&gt;
+&lt;h4 id=&quot;normal&quot;&gt;normal&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;V&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -293,13 +293,13 @@ Add return type after the function declaration.&lt;/p&gt;
   &lt;li&gt;expand parameter ( use &lt;code class=&quot;highlighter-rouge&quot;&gt;_*&lt;/code&gt; ): func(x:T, ys:U_*)    // Use a List as parameter for &lt;code class=&quot;highlighter-rouge&quot;&gt;ys&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;partial&quot;&gt;partial&lt;/h3&gt;
+&lt;h4 id=&quot;partial&quot;&gt;partial&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;currying&quot;&gt;currying&lt;/h3&gt;
+&lt;h4 id=&quot;currying&quot;&gt;currying&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -309,7 +309,7 @@ You can change a normal function to curried function by:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curried&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curried&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curried&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)=&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)=&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;anoymous-lamda-&quot;&gt;anoymous (lamda )&lt;/h3&gt;
+&lt;h4 id=&quot;anoymous-lamda-&quot;&gt;anoymous (lamda )&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;anoy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// or
@@ -317,7 +317,7 @@ You can change a normal function to curried function by:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The deference between the &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;val&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; will not evaluate the expression at right while &lt;code class=&quot;highlighter-rouge&quot;&gt;val&lt;/code&gt; does. So to avoid side effect you do not expect, use &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;parameterless&quot;&gt;parameterless&lt;/h3&gt;
+&lt;h4 id=&quot;parameterless&quot;&gt;parameterless&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;less&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -328,11 +328,11 @@ You can change a normal function to curried function by:&lt;/p&gt;
 
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; is just like a parameterless function declared by &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt;. Unless it is used by a right side expression and be evalued, it will stay untouched.&lt;/p&gt;
 
-&lt;h3 id=&quot;override&quot;&gt;override&lt;/h3&gt;
+&lt;h4 id=&quot;override&quot;&gt;override&lt;/h4&gt;
 
-&lt;h3 id=&quot;polymophic&quot;&gt;polymophic&lt;/h3&gt;
+&lt;h4 id=&quot;polymophic&quot;&gt;polymophic&lt;/h4&gt;
 
-&lt;h2 id=&quot;class&quot;&gt;class&lt;/h2&gt;
+&lt;h3 id=&quot;class&quot;&gt;class&lt;/h3&gt;
 &lt;p&gt;There is no &lt;code class=&quot;highlighter-rouge&quot;&gt;static &lt;/code&gt; in scala, and you can move all the static method you want to the companion object of the class.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class SomeClass{
@@ -344,7 +344,7 @@ object SomeClass{
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;class-pattern&quot;&gt;class pattern&lt;/h3&gt;
+&lt;h4 id=&quot;class-pattern&quot;&gt;class pattern&lt;/h4&gt;
 &lt;h4 id=&quot;section-1&quot;&gt;#1&lt;/h4&gt;
 &lt;p&gt;override &lt;code class=&quot;highlighter-rouge&quot;&gt;apply&lt;/code&gt; function.
 The apply function has special meaning in scala. The call to it will transform to call the class instance or the object itself. You can use it to represent subscript , like in swift does with &lt;code class=&quot;highlighter-rouge&quot;&gt;subscript&lt;/code&gt;, but with a bracket not square bracket. 
@@ -373,7 +373,7 @@ So by override &lt;code class=&quot;highlighter-rouge&quot;&gt;apply&lt;/code&gt
     &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;special-issues&quot;&gt;special issues&lt;/h3&gt;
+&lt;h4 id=&quot;special-issues&quot;&gt;special issues&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;a class method with one parameter can be called with dot symbol:&lt;/li&gt;
 &lt;/ul&gt;
@@ -390,7 +390,7 @@ So by override &lt;code class=&quot;highlighter-rouge&quot;&gt;apply&lt;/code&gt
 &lt;p&gt;No matter how the parameter list of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; method changed, it will finally fall to call the constructor &lt;code class=&quot;highlighter-rouge&quot;&gt;A(Int,String)&lt;/code&gt;.
 It is like &lt;code class=&quot;highlighter-rouge&quot;&gt;designated initializer&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;convenient initializer&lt;/code&gt; in swift. The constructor is a designated initializer, and the other this methods are all convient initializers.&lt;/p&gt;
 
-&lt;h2 id=&quot;object&quot;&gt;object&lt;/h2&gt;
+&lt;h3 id=&quot;object&quot;&gt;object&lt;/h3&gt;
 &lt;p&gt;Scala use &lt;code class=&quot;highlighter-rouge&quot;&gt;object&lt;/code&gt; to implement the singleton pattern and abilities with &lt;code class=&quot;highlighter-rouge&quot;&gt;static &lt;/code&gt; keyword.&lt;/p&gt;
 
 &lt;p&gt;##&lt;/p&gt;

@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>keep on today</title>
-  <meta name="description" content="Cogito, ergo sum.
-">
+  <title>use jquery in clojurescript</title>
+  <meta name="description" content="The cljsjs project provide a way to use js library in clojurescript. To use jquery, you need to add a dependency in project.clj:">
     <link  rel="shortcut icon"  href= '/favicon.png'>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://keepon.today/">
+  <link rel="canonical" href="http://keepon.today/web/2016/12/22/use-jquery-in-clojurescript.html">
   <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
 </head>
 
@@ -197,7 +196,7 @@
       <span>
         <!-- <input class='cat' type = 'radio' name='cat' id=web/> -->
         
-        <a class="page-link   " href="/web.html">web</a>
+        <a class="page-link  active " href="/web.html">web</a>
         
       </span>
       
@@ -209,217 +208,81 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">use jquery in clojurescript</h1>
+    <p class="post-meta"><time datetime="2016-12-22T00:00:00+08:00" itemprop="datePublished">Dec 22, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
 
-  <ul class="post-list">
     
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+    <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
+<g style="fill: rgb(0, 0, 0);">
+  <g style="fill: rgb(0, 0, 0);">
+    <path d="M607.416,67.76c-3.223-3.223-7.688-4.881-12.231-4.536l-24.713,1.863l-12.533,166.342    c-0.847,11.196-5.681,21.729-13.609,29.655L239.047,566.365c-1.527,1.527-3.145,2.926-4.835,4.212l30.303,30.303    c6.107,6.109,16.016,6.112,22.121,0l305.282-305.279c2.645-2.646,4.256-6.151,4.538-9.885l15.5-205.721    C612.295,75.452,610.641,70.983,607.416,67.76z" style="fill: rgb(0, 0, 0);"></path>
+    <path d="M526.741,229.076l15.5-205.72c0.343-4.543-1.313-9.013-4.54-12.235c-2.942-2.945-6.928-4.584-11.056-4.584    c-0.39,0-0.784,0.015-1.176,0.044L319.749,22.084c-3.732,0.282-7.24,1.888-9.887,4.536L4.58,331.901    c-6.107,6.109-6.107,16.016,0,22.123l190.223,190.221c3.055,3.054,7.057,4.58,11.061,4.58c4.002,0,8.007-1.527,11.061-4.58    l305.282-305.282C524.853,236.316,526.46,232.81,526.741,229.076z M447.987,160.164c-16.382,16.382-42.945,16.382-59.331,0    c-16.377-16.382-16.377-42.943,0.003-59.325c16.381-16.382,42.943-16.382,59.327,0    C464.364,117.221,464.364,143.783,447.987,160.164z" style="fill: rgb(0, 0, 0);"></path>
+  </g>
+</g>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/24/use-gravatar-in-clojurescript.html">use gravatar in clojurescript</a>
-        </h2>
-      </li>
+</svg></span>
+  <span class='tag-post'>clojurescript</span> <span class='tag-post'>jquery</span></span>
     
-      <li>
-        <span class="post-meta">Dec 22, 2016</span>
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/22/use-jquery-in-clojurescript.html">use jquery in clojurescript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 22, 2016</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>The <code class="highlighter-rouge">cljsjs</code> project provide a way to use js library in clojurescript. To use <code class="highlighter-rouge">jquery</code>, you need to add a dependency in <code class="highlighter-rouge">project.clj</code>:</p>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/12/22/disable-cache-in-chrome-during-development.html">disable cache in chrome during development</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 3, 2016</span>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="w">  </span><span class="p">[</span><span class="n">cljsjs/jquery</span><span class="w"> </span><span class="s">"2.2.4-0"</span><span class="p">]</span></code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/03/history-manipulation.html">web history manipulation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 1, 2016</span>
+<p>And require it in your namespace:</p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/01/use-html5history-and-secretary-in-clojure-web-development.html">use html5history and secretary to make SPA</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 15, 2016</span>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="w">  </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">cljsjs.jquery</span><span class="p">])</span></code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/web/2016/11/15/walk-through-of-redux.html">walk through of redux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 11, 2016</span>
+<p>Note that you can not use <code class="highlighter-rouge">:refer</code> or <code class="highlighter-rouge">:as</code> like normal cljs library.</p>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/11/ruby-require.html">ruby require</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 9, 2016</span>
+<h3 id="usage">usage</h3>
 
-        <h2>
-          <a class="post-link" href="/system/2016/11/09/configure-multiple-site-with-nginx.html">configure multiple site with nginx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2016</span>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="w">  </span><span class="c1">;; dom query
+</span><span class="w">  </span><span class="p">(</span><span class="nf">js/$</span><span class="w"> </span><span class="s">"#element"</span><span class="p">)</span><span class="w"> 
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/05/quick-walk-through-ruby.html">quick walk through ruby</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2016</span>
+  </span><span class="c1">;; use function
+</span><span class="w">  </span><span class="p">(</span><span class="nf">.css</span><span class="w"> </span><span class="p">(</span><span class="nf">js/$</span><span class="w"> </span><span class="s">"#one"</span><span class="p">)</span><span class="w"> </span><span class="s">"background-color"</span><span class="w"> </span><span class="s">"red"</span><span class="p">)</span><span class="w">
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/05/install-nginx-and-php-in-osx.html">install nginx and php in osx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 3, 2016</span>
+  </span><span class="c1">;; used in event handler, the dom get by jquery is an array wrapper,
+</span><span class="w">  </span><span class="c1">;; you can use (.get) to get the native element
+</span><span class="w">  </span><span class="p">(</span><span class="k">fn</span><span class="w"> </span><span class="p">[</span><span class="n">e</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nf">.target</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">.get</span><span class="w"> </span><span class="p">(</span><span class="nf">js/$</span><span class="w"> </span><span class="s">"#button"</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w">
+            </span><span class="p">(</span><span class="nf">do-when-equal</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nf">do-not-equal</span><span class="p">)))</span></code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/web/2016/11/03/session-and-cookie-management-in-express.html">session and cookie in express</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 1, 2016</span>
 
-        <h2>
-          <a class="post-link" href="/nodejs/2016/11/01/symbols-not-found-for-x64_86-after-install-libuv.html">symbol(s) not found for architecture x86_64 after installing libuv in osx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 29, 2016</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/web/2016/10/29/session-and-cookie-in-stateless-http.html">session and cookie in stateless http</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 29, 2016</span>
+                                
+</article>
+<div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
+<script>
 
-        <h2>
-          <a class="post-link" href="/java/2016/10/29/scala-basics.html">scala basics</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/27/nodejs-simple-udp-message-sender.html">a simple Read, Send, and Receive server in nodejs</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
+var disqus_config = function () {
+  var date = "2016-12-22";
+  date = date.replace(/-/g,'/')
+  var url = 'jekyll/update/'+date+"use jquery in clojurescript"
+this.page.url = "http://keepon.today"+"/web/2016/12/22/use-jquery-in-clojurescript.html"//"/web/2016/12/22/use-jquery-in-clojurescript.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/web/2016/12/22/use-jquery-in-clojurescript.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
 
-        <h2>
-          <a class="post-link" href="/system/2016/10/26/system-command.html">system command usage misc</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/python/2016/10/26/python-basics.html">python basics</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-stream-module.html">nodejs: stream module</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-readline-module.html">nodejs: readline</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-file-system-module.html">nodejs: fs module</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 24, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/system/2016/10/24/change-hostname-in-terminal.html">change hostname in terminal</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 24, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/javascript/2016/10/24/class-inheritance-in-javascript.html">class inheritance in javascript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 23, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/23/nodejs-console.html">nodejs: console</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 22, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2016/10/22/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 22, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/keepon/2016/10/22/another-category.html">another cate</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//keepon-today.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//keepon-today.disqus.com/count.js" async></script>
 
       </div>
     </div>

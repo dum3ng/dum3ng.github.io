@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>keep on today</title>
-  <meta name="description" content="Cogito, ergo sum.
-">
+  <title>get rid of log when using monger</title>
+  <meta name="description" content="I have used monger as the mongodb wrapper in clojure, and the verbose logging information is really a little anoying especailly when you want to do some db o...">
     <link  rel="shortcut icon"  href= '/favicon.png'>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://keepon.today/">
+  <link rel="canonical" href="http://keepon.today/misc/2016/12/26/get-rid-of-log-when-using-monger.html">
   <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
 </head>
 
@@ -167,7 +166,7 @@
       <span>
         <!-- <input class='cat' type = 'radio' name='cat' id=misc/> -->
         
-        <a class="page-link   " href="/other.html">misc</a>
+        <a class="page-link  active " href="/other.html">misc</a>
         
       </span>
       
@@ -209,233 +208,74 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">get rid of log when using monger</h1>
+    <p class="post-meta"><time datetime="2016-12-26T00:00:00+08:00" itemprop="datePublished">Dec 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
 
-  <ul class="post-list">
     
-      <li>
-        <span class="post-meta">Dec 30, 2016</span>
+    <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
+<g style="fill: rgb(0, 0, 0);">
+  <g style="fill: rgb(0, 0, 0);">
+    <path d="M607.416,67.76c-3.223-3.223-7.688-4.881-12.231-4.536l-24.713,1.863l-12.533,166.342    c-0.847,11.196-5.681,21.729-13.609,29.655L239.047,566.365c-1.527,1.527-3.145,2.926-4.835,4.212l30.303,30.303    c6.107,6.109,16.016,6.112,22.121,0l305.282-305.279c2.645-2.646,4.256-6.151,4.538-9.885l15.5-205.721    C612.295,75.452,610.641,70.983,607.416,67.76z" style="fill: rgb(0, 0, 0);"></path>
+    <path d="M526.741,229.076l15.5-205.72c0.343-4.543-1.313-9.013-4.54-12.235c-2.942-2.945-6.928-4.584-11.056-4.584    c-0.39,0-0.784,0.015-1.176,0.044L319.749,22.084c-3.732,0.282-7.24,1.888-9.887,4.536L4.58,331.901    c-6.107,6.109-6.107,16.016,0,22.123l190.223,190.221c3.055,3.054,7.057,4.58,11.061,4.58c4.002,0,8.007-1.527,11.061-4.58    l305.282-305.282C524.853,236.316,526.46,232.81,526.741,229.076z M447.987,160.164c-16.382,16.382-42.945,16.382-59.331,0    c-16.377-16.382-16.377-42.943,0.003-59.325c16.381-16.382,42.943-16.382,59.327,0    C464.364,117.221,464.364,143.783,447.987,160.164z" style="fill: rgb(0, 0, 0);"></path>
+  </g>
+</g>
 
-        <h2>
-          <a class="post-link" href="/java/2016/12/30/unit-test-in-clojure.html">unit test in clojure</a>
-        </h2>
-      </li>
+</svg></span>
+  <span class='tag-post'>log</span></span>
     
-      <li>
-        <span class="post-meta">Dec 26, 2016</span>
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/12/26/get-rid-of-log-when-using-monger.html">get rid of log when using monger</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>I have used <code class="highlighter-rouge">monger</code> as the mongodb wrapper in clojure, and the verbose logging information is really a little anoying especailly when you want to do some db operations in repl.</p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/24/use-gravatar-in-clojurescript.html">use gravatar in clojurescript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 22, 2016</span>
+<p>The issue tracker in monger github has said that just add :</p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/22/use-jquery-in-clojurescript.html">use jquery in clojurescript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 22, 2016</span>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="w">   </span><span class="p">[</span><span class="n">org.slf4j/slf4j-nop</span><span class="w"> </span><span class="s">"1.7.12"</span><span class="p">]</span></code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/12/22/disable-cache-in-chrome-during-development.html">disable cache in chrome during development</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 3, 2016</span>
+<p>in your dependencies the log will gone. But when I did that, the repl said that there are multiple binding to the <code class="highlighter-rouge">SLF4J</code>, and it is in the <code class="highlighter-rouge">ch.qos.logback</code>, and the repl choose to use the classic one so the log still be there.</p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/03/history-manipulation.html">web history manipulation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 1, 2016</span>
+<p>Some other library must have also dependency on <code class="highlighter-rouge">logback</code>, so I use:</p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/12/01/use-html5history-and-secretary-in-clojure-web-development.html">use html5history and secretary to make SPA</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 15, 2016</span>
+<p><code class="highlighter-rouge">lein deps :tree</code></p>
 
-        <h2>
-          <a class="post-link" href="/web/2016/11/15/walk-through-of-redux.html">walk through of redux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 11, 2016</span>
+<p>to show the deps tree and search for <code class="highlighter-rouge">logback</code>, and find that there is a library has dependency on it. Exclude it in <code class="highlighter-rouge">project.clj</code>:</p>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/11/ruby-require.html">ruby require</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 9, 2016</span>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="w">  </span><span class="n">dependencies</span><span class="err">:</span><span class="w"> </span><span class="p">[[</span><span class="n">some/library</span><span class="w"> </span><span class="s">"x.y.z"</span><span class="w"> </span><span class="no">:exclusions</span><span class="w"> </span><span class="p">[</span><span class="n">ch.qos.logback/logback-classic</span><span class="p">]]]</span></code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/system/2016/11/09/configure-multiple-site-with-nginx.html">configure multiple site with nginx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2016</span>
+<p>Restart reple, the log is gone.</p>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/05/quick-walk-through-ruby.html">quick walk through ruby</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2016</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/misc/2016/11/05/install-nginx-and-php-in-osx.html">install nginx and php in osx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 3, 2016</span>
+                                
+</article>
+<div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
+<script>
 
-        <h2>
-          <a class="post-link" href="/web/2016/11/03/session-and-cookie-management-in-express.html">session and cookie in express</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 1, 2016</span>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-        <h2>
-          <a class="post-link" href="/nodejs/2016/11/01/symbols-not-found-for-x64_86-after-install-libuv.html">symbol(s) not found for architecture x86_64 after installing libuv in osx</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 29, 2016</span>
+var disqus_config = function () {
+  var date = "2016-12-26";
+  date = date.replace(/-/g,'/')
+  var url = 'jekyll/update/'+date+"get rid of log when using monger"
+this.page.url = "http://keepon.today"+"/misc/2016/12/26/get-rid-of-log-when-using-monger.html"//"/misc/2016/12/26/get-rid-of-log-when-using-monger.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/misc/2016/12/26/get-rid-of-log-when-using-monger.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
 
-        <h2>
-          <a class="post-link" href="/web/2016/10/29/session-and-cookie-in-stateless-http.html">session and cookie in stateless http</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 29, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/java/2016/10/29/scala-basics.html">scala basics</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/27/nodejs-simple-udp-message-sender.html">a simple Read, Send, and Receive server in nodejs</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/system/2016/10/26/system-command.html">system command usage misc</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/python/2016/10/26/python-basics.html">python basics</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-stream-module.html">nodejs: stream module</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-readline-module.html">nodejs: readline</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 26, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/26/nodejs-file-system-module.html">nodejs: fs module</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 24, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/system/2016/10/24/change-hostname-in-terminal.html">change hostname in terminal</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 24, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/javascript/2016/10/24/class-inheritance-in-javascript.html">class inheritance in javascript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 23, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/nodejs/2016/10/23/nodejs-console.html">nodejs: console</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 22, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2016/10/22/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 22, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/keepon/2016/10/22/another-category.html">another cate</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//keepon-today.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//keepon-today.disqus.com/count.js" async></script>
 
       </div>
     </div>

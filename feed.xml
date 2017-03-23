@@ -6,9 +6,84 @@
 </description>
     <link>http://keepon.today/</link>
     <atom:link href="http://keepon.today/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Feb 2017 20:09:52 +0800</pubDate>
-    <lastBuildDate>Thu, 23 Feb 2017 20:09:52 +0800</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Thu, 23 Mar 2017 15:47:37 +0800</pubDate>
+    <lastBuildDate>Thu, 23 Mar 2017 15:47:37 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>.bashrc and .bash_profile</title>
+        <description>&lt;p&gt;.bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells.&lt;/p&gt;
+
+&lt;p&gt;When you login (type username and password) via console, either sitting at the machine, or remotely via ssh: .bash_profile is executed to configure your shell before the initial command prompt.&lt;/p&gt;
+
+&lt;p&gt;But, if you’ve already logged into your machine and open a new terminal window (xterm) then .bashrc is executed before the window command prompt. .bashrc is also run when you start a new bash instance by typing /bin/bash in a terminal.&lt;/p&gt;
+
+&lt;p&gt;On OS X, Terminal by default runs a login shell every time, so this is a little different to most other systems, but you can configure that in the preferences.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://keepon.today/2017/03/21/bashrc-and-bash-profile.html</link>
+        <guid isPermaLink="true">http://keepon.today/2017/03/21/bashrc-and-bash-profile.html</guid>
+        
+        <category>linux,</category>
+        
+        <category>bash</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>control c and control z</title>
+        <description>&lt;p&gt;Since both &lt;code class=&quot;highlighter-rouge&quot;&gt;control-c&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;control-z&lt;/code&gt; can make a foreground task go out and make you use the shell again, there is import differenct between them:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;control-c &lt;/code&gt; will send the &lt;code class=&quot;highlighter-rouge&quot;&gt;interrupt&lt;/code&gt; signal to this process, and normally will kill the process, you can use the port again if that process is a server and used a port.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;control-z&lt;/code&gt; will send the &lt;code class=&quot;highlighter-rouge&quot;&gt;suspend&lt;/code&gt; signal to the process, and will send the process to background and suspend it. The shell will output a message like:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1]+ Stopped process-name 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The number is the index of the process in the background jobs. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;jobs&lt;/code&gt;, you can get a list of background processes. And run &lt;code class=&quot;highlighter-rouge&quot;&gt;fg %n&lt;/code&gt;, where n is the process index, you can draw the process back to foreground. And simply run &lt;code class=&quot;highlighter-rouge&quot;&gt;bg %n&lt;/code&gt;, you can resume the specified process in background quitely.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 18 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://keepon.today/misc/2017/03/18/control-c-and-control-z.html</link>
+        <guid isPermaLink="true">http://keepon.today/misc/2017/03/18/control-c-and-control-z.html</guid>
+        
+        <category>linux,</category>
+        
+        <category>shell</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>use esformatter to beautify jsx in emacs</title>
+        <description>&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;web-beautify&lt;/code&gt; package in emacs melpa repository use &lt;code class=&quot;highlighter-rouge&quot;&gt;js-beautify&lt;/code&gt; as the default tool to beautify js code. But it does not do a good job when there is jsx code.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;esformatter&lt;/code&gt; is an alternative tool to beautify js code, and with the plugin &lt;code class=&quot;highlighter-rouge&quot;&gt;esformatter-jsx&lt;/code&gt;, it will do rather well in beautify jsx code.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;yarn global add esformatter
+  // &lt;span class=&quot;k&quot;&gt;then in &lt;/span&gt;your project directory 
+  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;yarn add -D esformatter esformatter-jsx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now change the variable in &lt;code class=&quot;highlighter-rouge&quot;&gt;web-beautify&lt;/code&gt; package:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elisp&quot; data-lang=&quot;elisp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;;; you can add this in `init.el`&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;web-beautify-js-program&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;esformatter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; and optionally bind save-hook&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;web-beautify-js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sat, 11 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://keepon.today/mics/2017/03/11/use-esformatter-in-emacs.html</link>
+        <guid isPermaLink="true">http://keepon.today/mics/2017/03/11/use-esformatter-in-emacs.html</guid>
+        
+        <category>emacs</category>
+        
+        
+        <category>mics</category>
+        
+      </item>
     
       <item>
         <title>unit test in clojure</title>
@@ -532,241 +607,6 @@ The &lt;code class=&quot;highlighter-rouge&quot;&gt;pathname&lt;/code&gt; is the
         
         
         <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>walk through of redux</title>
-        <description>&lt;h2 id=&quot;core-concepts&quot;&gt;core concepts&lt;/h2&gt;
-&lt;h3 id=&quot;action&quot;&gt;action&lt;/h3&gt;
-
-&lt;p&gt;An action is an object with type and payload. 
-Usually you will need to make some action creators.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;someAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;///&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'some action'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;reducer&quot;&gt;reducer&lt;/h3&gt;
-&lt;p&gt;A reducer is a pure function to return the next state:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// return a new state&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;A reducer must not change the state directly, instead it will return a new object represents the next state. If the state is a big object to make a new one, you will need &lt;code class=&quot;highlighter-rouge&quot;&gt;ImmutableJS&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;store&quot;&gt;store&lt;/h3&gt;
-&lt;p&gt;The store is the root state of an application. In redux it can be created by reducer:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'reducers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reducers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;core-functions&quot;&gt;core functions&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;package&lt;/th&gt;
-      &lt;th&gt;functions&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;redux&lt;/td&gt;
-      &lt;td&gt;applyMiddleware&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;combineReducers&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;createStore&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;compose&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;bindActionCreators&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;react-redux&lt;/td&gt;
-      &lt;td&gt;connect&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;Provider&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;combinereducers&quot;&gt;combineReducers&lt;/h3&gt;
-
-&lt;h3 id=&quot;createstore&quot;&gt;createStore&lt;/h3&gt;
-
-&lt;h3 id=&quot;applymiddleware&quot;&gt;applyMiddleware&lt;/h3&gt;
-
-&lt;h3 id=&quot;compose&quot;&gt;compose&lt;/h3&gt;
-
-&lt;h3 id=&quot;bindactioncreators&quot;&gt;bindActionCreators&lt;/h3&gt;
-
-&lt;h3 id=&quot;connect&quot;&gt;connect&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;provider&quot;&gt;Provider&lt;/h3&gt;
-&lt;p&gt;Provider is a react component, it can be used as:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Provider&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Provider&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;application-structure&quot;&gt;application structure&lt;/h2&gt;
-
-&lt;p&gt;Typically the structure would be :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;comp0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;comp1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;containers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cont0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cont1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The differences between component and container is a container is connected with the state. Then how to decide to make one to component or container?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;component is simple, not complex compound one&lt;/li&gt;
-  &lt;li&gt;component can be reused&lt;/li&gt;
-  &lt;li&gt;does it contain other&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By the above tips, the &lt;code class=&quot;highlighter-rouge&quot;&gt;components&lt;/code&gt; folder may be named &lt;code class=&quot;highlighter-rouge&quot;&gt;common&lt;/code&gt;
-When you have a component and can be sure that it would not be reused, you can just put the component code and connect code together into one file.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 15 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://keepon.today/web/2016/11/15/walk-through-of-redux.html</link>
-        <guid isPermaLink="true">http://keepon.today/web/2016/11/15/walk-through-of-redux.html</guid>
-        
-        <category>redux</category>
-        
-        <category>react</category>
-        
-        
-        <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>ruby require</title>
-        <description>&lt;p&gt;The  &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; in the source file means the interpreter to find a file with that name, not the gem name.
-Say you installed a gem called &lt;code class=&quot;highlighter-rouge&quot;&gt;somegem&lt;/code&gt;, and under the &lt;code class=&quot;highlighter-rouge&quot;&gt;/lib/&lt;/code&gt; folder, there is only a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;some_gem&lt;/code&gt;, then you will write:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'some_gem'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;some useful commands&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  gem which gem_name         // show where is the gem 
-  gem list --local    // list gems installed locally
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Fri, 11 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://keepon.today/misc/2016/11/11/ruby-require.html</link>
-        <guid isPermaLink="true">http://keepon.today/misc/2016/11/11/ruby-require.html</guid>
-        
-        <category>ruby</category>
-        
-        
-        <category>misc</category>
-        
-      </item>
-    
-      <item>
-        <title>configure multiple site with nginx</title>
-        <description>&lt;p&gt;Taks linux as example.&lt;/p&gt;
-
-&lt;h2 id=&quot;create-configuration-file&quot;&gt;create configuration file&lt;/h2&gt;
-&lt;p&gt;cd into &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/sites-available/&lt;/code&gt;, make a new site configuration file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /etc/nginx/sites-available
-  touch another
-  emacs another&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In the new conf file, write:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;  &lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;]:80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/www/data/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.html,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.htm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;my_site.com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# conf
-&lt;/span&gt;      &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you want to direct the uri to a running service on some port, you can use proxy to configure the location:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;  &lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://localhost:3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Upgrade&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'upgrade'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kn&quot;&gt;proxy_cache_bypass&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;make-link-and-restart&quot;&gt;make link and restart&lt;/h2&gt;
-&lt;p&gt;In terminal:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  sudo ln -s /etc/nginx/sites-available/another /etc/nginx/sites-enable/
-  sudo systemctl restart nginx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;nginx will load the files in /sites-enable/ when start.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;
-In osx, you can directly edit the conf file in &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/etc/nginx/nginx.conf&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 09 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://keepon.today/system/2016/11/09/configure-multiple-site-with-nginx.html</link>
-        <guid isPermaLink="true">http://keepon.today/system/2016/11/09/configure-multiple-site-with-nginx.html</guid>
-        
-        <category>nginx</category>
-        
-        
-        <category>system</category>
         
       </item>
     

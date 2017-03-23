@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>nodejs: stream module</title>
-  <meta name="description" content="const stream = require('stream')">
+  <title>control c and control z</title>
+  <meta name="description" content="Since both control-c and control-z can make a foreground task go out and make you use the shell again, there is import differenct between them:control-c  wil...">
     <link  rel="shortcut icon"  href= '/favicon.ico'>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://keepon.today/nodejs/2016/10/26/nodejs-stream-module.html">
+  <link rel="canonical" href="http://keepon.today/misc/2017/03/18/control-c-and-control-z.html">
   <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
 </head>
 
@@ -166,7 +166,7 @@
         <!-- <input class='cat' type = 'radio' name='cat' id=nodejs/> -->
         
         
-        <a class="page-link  active " href="/nodejs.html">nodejs</a>
+        <a class="page-link   " href="/nodejs.html">nodejs</a>
         
         
         
@@ -179,7 +179,7 @@
         <!-- <input class='cat' type = 'radio' name='cat' id=misc/> -->
         
         
-        <a class="page-link   " href="/other.html">misc</a>
+        <a class="page-link  active " href="/other.html">misc</a>
         
         
         
@@ -233,8 +233,8 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">nodejs: stream module</h1>
-    <p class="post-meta"><time datetime="2016-10-26T00:00:00+08:00" itemprop="datePublished">Oct 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
+    <h1 class="post-title" itemprop="name headline">control c and control z</h1>
+    <p class="post-meta"><time datetime="2017-03-18T00:00:00+08:00" itemprop="datePublished">Mar 18, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
 
     
     <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
@@ -246,14 +246,20 @@
 </g>
 
 </svg></span>
-  <span class='tag-post'>doc</span> <span class='tag-post'>stream</span></span>
+  <span class='tag-post'>linux,</span> <span class='tag-post'>shell</span></span>
     
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stream'</span><span class="p">)</span></code></pre></figure>
+    <p>Since both <code class="highlighter-rouge">control-c</code> and <code class="highlighter-rouge">control-z</code> can make a foreground task go out and make you use the shell again, there is import differenct between them:
+<code class="highlighter-rouge">control-c </code> will send the <code class="highlighter-rouge">interrupt</code> signal to this process, and normally will kill the process, you can use the port again if that process is a server and used a port.
+<code class="highlighter-rouge">control-z</code> will send the <code class="highlighter-rouge">suspend</code> signal to the process, and will send the process to background and suspend it. The shell will output a message like:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>1]+ Stopped process-name 
+</code></pre>
+</div>
+<p>The number is the index of the process in the background jobs. Use <code class="highlighter-rouge">jobs</code>, you can get a list of background processes. And run <code class="highlighter-rouge">fg %n</code>, where n is the process index, you can draw the process back to foreground. And simply run <code class="highlighter-rouge">bg %n</code>, you can resume the specified process in background quitely.</p>
 
 
   </div>
@@ -268,11 +274,11 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-  var date = "2016-10-26";
+  var date = "2017-03-18";
   date = date.replace(/-/g,'/')
-  var url = 'jekyll/update/'+date+"nodejs: stream module"
-this.page.url = "http://keepon.today"+"/nodejs/2016/10/26/nodejs-stream-module.html"//"/nodejs/2016/10/26/nodejs-stream-module.html";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "/nodejs/2016/10/26/nodejs-stream-module.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  var url = 'jekyll/update/'+date+"control c and control z"
+this.page.url = "http://keepon.today"+"/misc/2017/03/18/control-c-and-control-z.html"//"/misc/2017/03/18/control-c-and-control-z.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/misc/2017/03/18/control-c-and-control-z.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>nodejs: stream module</title>
-  <meta name="description" content="const stream = require('stream')">
+  <title>use esformatter to beautify jsx in emacs</title>
+  <meta name="description" content="The web-beautify package in emacs melpa repository use js-beautify as the default tool to beautify js code. But it does not do a good job when there is jsx c...">
     <link  rel="shortcut icon"  href= '/favicon.ico'>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://keepon.today/nodejs/2016/10/26/nodejs-stream-module.html">
+  <link rel="canonical" href="http://keepon.today/mics/2017/03/11/use-esformatter-in-emacs.html">
   <link rel="alternate" type="application/rss+xml" title="keep on today" href="http://keepon.today/feed.xml">
 </head>
 
@@ -166,7 +166,7 @@
         <!-- <input class='cat' type = 'radio' name='cat' id=nodejs/> -->
         
         
-        <a class="page-link  active " href="/nodejs.html">nodejs</a>
+        <a class="page-link   " href="/nodejs.html">nodejs</a>
         
         
         
@@ -233,8 +233,8 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">nodejs: stream module</h1>
-    <p class="post-meta"><time datetime="2016-10-26T00:00:00+08:00" itemprop="datePublished">Oct 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
+    <h1 class="post-title" itemprop="name headline">use esformatter to beautify jsx in emacs</h1>
+    <p class="post-meta"><time datetime="2017-03-11T00:00:00+08:00" itemprop="datePublished">Mar 11, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">dumeng</span></span>
 
     
     <span class="post-tags"><span class="icon icon-tag"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612.001 612.001" style="fill: rgb(0, 0, 0);" xml:space="preserve">
@@ -246,14 +246,26 @@
 </g>
 
 </svg></span>
-  <span class='tag-post'>doc</span> <span class='tag-post'>stream</span></span>
+  <span class='tag-post'>emacs</span></span>
     
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stream'</span><span class="p">)</span></code></pre></figure>
+    <p>The <code class="highlighter-rouge">web-beautify</code> package in emacs melpa repository use <code class="highlighter-rouge">js-beautify</code> as the default tool to beautify js code. But it does not do a good job when there is jsx code.</p>
+
+<p><code class="highlighter-rouge">esformatter</code> is an alternative tool to beautify js code, and with the plugin <code class="highlighter-rouge">esformatter-jsx</code>, it will do rather well in beautify jsx code.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>yarn global add esformatter
+  // <span class="k">then in </span>your project directory 
+  <span class="nv">$ </span>yarn add -D esformatter esformatter-jsx</code></pre></figure>
+
+<p>Now change the variable in <code class="highlighter-rouge">web-beautify</code> package:</p>
+
+<figure class="highlight"><pre><code class="language-elisp" data-lang="elisp"><span class="c1">;; you can add this in `init.el`</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">web-beautify-js-program</span> <span class="s">"esformatter"</span><span class="p">)</span>
+<span class="c1">;; and optionally bind save-hook</span>
+  <span class="p">(</span><span class="nv">add-hook</span>  <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nv">web-beautify-js</span><span class="p">)))</span> </code></pre></figure>
 
 
   </div>
@@ -268,11 +280,11 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-  var date = "2016-10-26";
+  var date = "2017-03-11";
   date = date.replace(/-/g,'/')
-  var url = 'jekyll/update/'+date+"nodejs: stream module"
-this.page.url = "http://keepon.today"+"/nodejs/2016/10/26/nodejs-stream-module.html"//"/nodejs/2016/10/26/nodejs-stream-module.html";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "/nodejs/2016/10/26/nodejs-stream-module.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  var url = 'jekyll/update/'+date+"use esformatter to beautify jsx in emacs"
+this.page.url = "http://keepon.today"+"/mics/2017/03/11/use-esformatter-in-emacs.html"//"/mics/2017/03/11/use-esformatter-in-emacs.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/mics/2017/03/11/use-esformatter-in-emacs.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
